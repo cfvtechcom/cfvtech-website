@@ -5,6 +5,8 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "docs"
 SITE = "https://cfvtech.com"
+# bump when assets/css/static.css or assets/js/site.js change, so browsers fetch the new version
+ASSET_VERSION = "2026-10-15b"
 LINKEDIN = "https://www.linkedin.com/company/cfvtech/"
 
 T = {
@@ -104,7 +106,7 @@ def layout(lang, page, body):
     <link href="{r}assets/css/slick.css" rel="stylesheet">
     <link href="{r}assets/css/theme-color/default-theme.css" rel="stylesheet">
     <link href="{r}assets/css/styles.css" rel="stylesheet">
-    <link href="{r}assets/css/static.css" rel="stylesheet">
+    <link href="{r}assets/css/static.css?v={ASSET_VERSION}" rel="stylesheet">
 </head>
 <body class="page">
     <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
@@ -149,7 +151,7 @@ def layout(lang, page, body):
     <script src="{r}assets/js/jquery.min.js"></script>
     <script src="{r}assets/js/bootstrap.js"></script>
     <script src="{r}assets/js/slick.js"></script>
-    <script src="{r}assets/js/site.js"></script>
+    <script src="{r}assets/js/site.js?v={ASSET_VERSION}"></script>
 </body>
 </html>
 """
