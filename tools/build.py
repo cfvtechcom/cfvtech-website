@@ -5,6 +5,7 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "docs"
 SITE = "https://cfvtech.com"
+LINKEDIN = "https://www.linkedin.com/company/cfvtech/"
 
 T = {
  "fr": dict(
@@ -24,7 +25,7 @@ T = {
   reference="Référence",
   reference_msg="Nous ne pouvons réussir sans le succès de nos clients, c'est pourquoi les clients font confiance à nos services dans différentes missions critiques.",
   work="Travailler avec nous",
-  work_msg="Le succès de nos clients ne peut être atteint sans le succès de nos employés. Nous pensons que chaque candidat est unique et que nos projets avec nos clients sont en constante évolution, contactez-nous pour plus de détails. Votre futur emploi n'est qu'à un clic.",
+  work_msg="Le succès de nos clients ne peut être atteint sans le succès de nos employés. Nous pensons que chaque candidat est unique et que nos projets avec nos clients sont en constante évolution, {li}contactez-nous sur LinkedIn{/li} pour plus de détails. Votre futur emploi n'est qu'à un clic.",
   positions="Postes", positions_msg="Nous sommes constamment à la recherche de talents dans différents domaines.",
   architect="Architecte", autoeng="Ingénieur en automatisation", analyst="Analyste", admin="Administrateur",
   cloudsec="Sécurité infonuagique", risk="Gestion des risques", incident="La gestion des incidents",
@@ -51,7 +52,7 @@ T = {
   reference="Reference",
   reference_msg="We cannot succeed without the success of our customers, that is why customers trust our services in different critical missions.",
   work="Work with us",
-  work_msg="Success of our customers can not be achieved without the success of our employees. We believe that every candidate is unique and our projects with customers are constantly evolving, contact us for more details. Your future job is only one click away.",
+  work_msg="Success of our customers can not be achieved without the success of our employees. We believe that every candidate is unique and our projects with customers are constantly evolving, {li}contact us on LinkedIn{/li} for more details. Your future job is only one click away.",
   positions="Positions", positions_msg="We are constantly looking for talent in different domains.",
   architect="Architect", autoeng="Automation Engineer", analyst="Analyst", admin="Administrator",
   cloudsec="Cloud Security", risk="Risk Management", incident="Incident Management",
@@ -262,7 +263,7 @@ def careers(lang):
                 </div>
                 <div class="rec-intro-content">
                     <h2>{t['work']}</h2>
-                    <p>{t['work_msg']}</p>
+                    <p>{t['work_msg'].replace('{li}', f'<a class="linkedin-link" href="{LINKEDIN}" target="_blank" rel="noopener"><i class="fa fa-linkedin-square" aria-hidden="true"></i> ').replace('{/li}', '</a>')}</p>
                 </div>
                 <div class="intro-img">
                     {imgs}
