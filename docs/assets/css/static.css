@@ -3,3 +3,6 @@
 .service-column { height: auto !important; }
 /* Careers boxes had fixed heights that cut off the job tags on laptop-width screens. */
 .rec-block { height: auto !important; min-height: 320px; }
+/* LinkedIn link in the careers intro (white background: darker gold for readability). */
+.rec-intro-content p a.linkedin-link { color: #b97a00; font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.rec-intro-content p a.linkedin-link:hover { color: #0a66c2; }
