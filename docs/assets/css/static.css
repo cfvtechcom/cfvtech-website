@@ -1,0 +1,5 @@
+/* Static-site overrides (2026): the "Learn more" buttons were removed with the
+   contact form, so service cards size to their text instead of a fixed height. */
+.service-column { height: auto !important; }
+/* Careers boxes had fixed heights that cut off the job tags on laptop-width screens. */
+.rec-block { height: auto !important; min-height: 320px; }
